@@ -32,3 +32,12 @@ resource appServiceApp 'Microsoft.Web/sites@2022-03-01' = {
     httpsOnly: true
   }
 }
+
+module cosmosDB 'modules/cosmos-db.bicep' = {
+  name: 'cosmos-db'
+  params: {
+    location: location
+    environmentType: environmentType
+    cosmosDBAccountName: cosmosDBAccountName
+  }
+}
